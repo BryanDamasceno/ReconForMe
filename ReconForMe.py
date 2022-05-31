@@ -1,6 +1,44 @@
 import os
+import sys
+import shodan
+import requests
+import json
+
 
 #===============FUNCTIONS===============
+
+def callNuclei(target):   
+    os.system("echo 'SCAN VULNERABILITIES OF YOUR TARGET: ' > ./report/vulns_result.txt")
+    nuclei = "nuclei -u " + target + " -t ./templates/*.yaml -o ./report/vulns_result.txt"
+    return nuclei
+
+def callShodan(target):
+
+    with open('./api.txt', 'r') as f:
+      SHODAN_API_KEY = f.readline()
+
+    api = shodan.Shodan(SHODAN_API_KEY)
+
+    dnsResolve = 'https://api.shodan.io/dns/resolve?hostnames=' + target + '&key=' + SHODAN_API_KEY
+
+try:
+  
+    resolved = requests.get(dnsResolve)
+    hostIP = resolved.json() [target]
+  
+    host = json.dumps(api.host(hostIP), indent = 4, sort_keys = True)
+
+   
+    with open('./report/shodan_result.json', 'w') as f:
+      
+      if len(host) != 0:
+                          
+           f.write(host)
+
+except:
+    'An error occured'
+
+
 def callSubfinder(target):
    os.system("echo 'SUBDOMAINS OF YOUR TARGET: ' > ./report/enumeration_result.txt")
    subfinder = "subfinder -d " + target + " >> ./report/enumeration_result.txt" 
@@ -29,18 +67,32 @@ def callNmap(target):
       callNmap(target)
 
 
+
+#===============MAIN===============
+
 if not os.path.isdir('./report'): os.system("mkdir ./report")
    
 
-print("Hello, Bryan.")
+print("Hello, friend")
 print("Who is your target?", end=" ")
 target = input()
 
 
 
 
-
-
 os.system(callNmap(target))
 os.system(callSubfinder(target))
-print("Scanning...")
+callShodan(target)
+os.system(callNuclei(target))
+print("Done! Check the report folder for your information")
+print("Happy Hacking")
+
+
+
+
+
+
+
+
+
+
