@@ -1,8 +1,8 @@
 # ReconForMe
 
-## Passive recon and information gathering automation.
+## Active recon and information gathering automation.
 
-This script automates the use of some tools for the reconnaissance phase in a pentest using a domain.
+This script automates the use of some reconnaissance and scan tools for information gathering of a domain.
 
 You must have installed on your machine:
 
