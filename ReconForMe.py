@@ -78,7 +78,7 @@ def callWhois(target):
 if not os.path.isdir('./report'): os.system("mkdir ./report")
    
 
-print("Hello, friend")
+print("Hello Friend")
 print("Who is your target?", end=" ")
 target = input()
 
