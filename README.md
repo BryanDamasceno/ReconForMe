@@ -2,7 +2,7 @@
 
 ## Passive recon and information gathering automation.
 
-This script automates the use of some tools for the recon phase in a pentest.
+This script automates the use of some tools for the reconnaissance phase in a pentest.
 
 You must have installed on your machine:
 
