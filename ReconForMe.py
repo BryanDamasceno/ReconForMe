@@ -66,6 +66,11 @@ def callNmap(target):
       print("Please say yes or no, sir")
       callNmap(target)
 
+def callWhois(target):
+    os.system("echo 'WHO IS IS YOUR TARGET: ' > ./report/scan_result.txt")
+    whois = "whois " + target + " >> ./report/whois_result.txt"
+    return whois
+
 
 
 #===============MAIN===============
@@ -79,7 +84,7 @@ target = input()
 
 
 
-
+os.system(callWhois(target))
 os.system(callNmap(target))
 os.system(callSubfinder(target))
 callShodan(target)

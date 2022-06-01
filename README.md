@@ -10,6 +10,7 @@ You must have installed on your machine:
 - nmap: https://nmap.org/
 - subfinder: https://github.com/projectdiscovery/subfinder
 - nuclei: https://github.com/projectdiscovery/nuclei
+- shell command for whois protocol
 ```
 
 To consult the shodan search engine (https://shodan.io) it is necessary to have an account on the platform and purchase an api key. Put the api key in an "api.txt" file at the root of the project.
