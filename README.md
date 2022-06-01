@@ -1,6 +1,6 @@
 # ReconForMe
 
-##Passive recon and information gathering automation.
+## Passive recon and information gathering automation.
 
 This script automates the use of some tools for the recon phase in a pentest.
 
@@ -20,7 +20,6 @@ Run the program with the command:
 
 ```
 python3 ReconForMe.py
-
 ```
 
 After running the script the results can be found in the "report" folder that was created.
