@@ -15,7 +15,7 @@ You must have installed on your machine:
 
 To consult the shodan search engine (https://shodan.io) it is necessary to have an account on the platform and purchase an api key. Put the api key in an "api.txt" file at the root of the project.
 
-You must add the CVEs templates in the "templates" folder, so that they can be used by nuclei during the target scan.
+You must add the CVEs templates in the "templates" folder, so that they can be used by nuclei during the target scan
 
 Run the program with the command:
 
